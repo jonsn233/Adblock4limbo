@@ -1,0 +1,19 @@
+name: Sync Remote Rules
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 设置定时同步的时间，这个示例是每天UTC时间的午夜
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Sync with remote repository
+        run: |
+          git remote add upstream https://github.com/limbopro/Adblock4limbo
+          git pull upstream master
+          git push
