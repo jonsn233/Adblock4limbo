@@ -14,6 +14,6 @@ jobs:
 
       - name: Sync with remote repository
         run: |
-          git remote add upstream https://github.com/limbopro/Adblock4limbo
+          git remote add upstream https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.conf
           git pull upstream master
           git push
